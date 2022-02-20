@@ -1,0 +1,33 @@
+ public static final int HEIGHT = 420;
+    public static final int WIDTH = 680;
+    public static final int DIAMETER = 7;
+    public static int ball = 0;
+    public static int position = 0;
+
+    @Override
+    public void settings() {
+@@ -15,15 +15,14 @@ public void settings() {
+
+    @Override
+    public void draw() {
+        moveBall(ball,HEIGHT/5);
+        moveBall(2*ball,2*HEIGHT/5);
+        moveBall(3*ball,3*HEIGHT/5);
+        moveBall(4*ball,4*HEIGHT/5);
+        ball+=1;
+        for (int speed = 1; speed <= 4; speed++) {
+            ball(speed*position,speed*HEIGHT/5);
+        }
+        position +=1;
+    }
+
+    private void moveBall(int movementX, int height) {
+        ellipse(movementX,height,DIAMETER, DIAMETER);
+    private void ball(int positionX, int height) {
+        ellipse(positionX,height,DIAMETER, DIAMETER);
+    }
+
+    public static void main(String[] args) {
+     PApplet.main("Procedural4ball",args);
+    }
+}
